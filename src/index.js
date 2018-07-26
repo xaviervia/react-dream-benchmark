@@ -47,7 +47,11 @@ const getDiffs = () => {
         ]
       }
     }, [])
-    .map(([before, after]) => after.startTime - before.startTime)
+    .map(([before, after]) => [
+      after.startTime - before.startTime,
+      before,
+      after
+    ])
 }
 
 global.getDiffs = getDiffs

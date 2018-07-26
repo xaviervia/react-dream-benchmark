@@ -1,3 +1,3 @@
-import Output from './reactDreamApproach'
+import Output from './higherOrderComponentApproach'
 
 export default Output
