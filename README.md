@@ -1,5 +1,16 @@
 # React Dream v Higher-order Component benchmark
 
+### Caveats
+
+This comparison doesn’t mean React Dream is intrinsically faster than regular Recompose. The comparison is picking a scenario which is a common recompose one, but it’s only one of many use cases.
+
+- The usage of recompose here is assuming that the HoCs are not squashed. This would be possible with stateless HoCs! In that case, the diff would probably be naught
+- Stateful components will probably show no diff between the two approaches since they can’t be squashed into pure function composition, which is what is giving RD an edge here
+
+500 HoCs on a single component is not realistic, but the intent is to reflect what would happen if a bunch of components, maybe about 50 of them, each with about 30 HoCs (something I’ve seen quite often) are rendered in a tree. It might be a good idea to benchmark that scenario instead, but the intention here was to simplify the scenario to make sure other factors are not playing a role.
+
+## Start
+
 ```
 yarn global add serve
 
